@@ -20,6 +20,7 @@ Aplicação web de lista de tarefas construída com Vue 3 + Vite no front-end e 
 
 - Node.js 18+
 - npm
+- pnpm (opcional, alternativa ao npm)
 
 ## Backend (Express + SQLite)
 
@@ -40,6 +41,22 @@ npm run dev
 ```
 
 A aplicação web ficará disponível em `http://localhost:5173`.
+
+## Problemas comuns
+
+Se o `npm install` retornar **403 Forbidden** por políticas do registro, tente usar:
+
+```bash
+npm install --no-audit --no-fund
+```
+
+ou:
+
+```bash
+pnpm install
+```
+
+Se o erro persistir, execute a instalação em outro ambiente com acesso ao registro.
 
 ## Endpoints
 

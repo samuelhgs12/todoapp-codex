@@ -1,12 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'fs';
 import sqlite3 from 'sqlite3';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const dbPath = path.join(__dirname, '..', 'data', 'todos.db');
+const dataDir = 'data';
+fs.mkdirSync(dataDir, { recursive: true });
+const dbPath = `${dataDir}/todos.sqlite`;
 
 const sqlite = sqlite3.verbose();
 const db = new sqlite.Database(dbPath);
